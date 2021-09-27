@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<h1>THis is help page</h1>
+<img style="width: 300px;height: 200px;" src = '{% static 'images/2.JPG' %}'
+alt='oops'>
+<div>
+  {% if acc_rec %}
+  <table>
+    <thead>
+      <th>site name</th>
+      <th>Date Accessed</th>
+    </thead>
+    {% for acc in acc_rec %}
+    <tr>
+      <td>{{acc.name}}</td>
+      <td>{{acc.date}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {%else%}
+  <p>nothing</p>
+  {% endif %}
+</div>
+
+{% endblock content %}
